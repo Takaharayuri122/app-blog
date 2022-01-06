@@ -13,7 +13,7 @@ const session = require('express-session');
 const connection = require('./database/database');
 
 // Import Controllers
-const categoriesController = require('./app/Domains/categories/Controllers/CategoriesController');
+const categoriesController = require('./CategoriesController');
 const articlesController = require('./app/Domains/articles/Controllers/ArticlesController');
 const usersController = require('./app/Domains/Users/Controllers/UsersController');
 
