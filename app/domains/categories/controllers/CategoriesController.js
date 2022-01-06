@@ -3,7 +3,7 @@ const express = require('express');
 // Express feature that allows you to create routes without the need to use the "app" variable
 const router = express.Router();
 // Import category model
-const Category = require('app/domains/categories/models/category');
+const Category = require('/app/domains/categories/models/category');
 // Import slugify
 const slugify = require('slugify');
 // Import Authenticate Middleware
