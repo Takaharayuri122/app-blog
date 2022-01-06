@@ -1,10 +1,22 @@
+//Import Enviroments Variables
+require('dotenv').config()
+
 // Import express
 const sequelize = require('sequelize');
 // Connecting to the database with sequelize
-const connection = new sequelize('u331984428_lucasblog', 'u331984428_lucasblog', 'Lucas@99897', {
-   host: 'sql541.main-hosting.eu',
+const connection = new sequelize(
+   process.env.PLANETSCALE_DB,
+   process.env.PLANETSCALE_DB_USERNAME,
+   process.env.PLANETSCALE_DB_PASSWORD, {
+   host: process.env.PLANETSCALE_DB_HOST,
    dialect: 'mysql',
-   timezone: '-03:00'
+   timezone: '-03:00',
+   dialectOptions: {
+      encrypt: true,
+      ssl: {
+         rejectUnauthorized: false
+      }
+   }
 });
 
 module.exports = connection;

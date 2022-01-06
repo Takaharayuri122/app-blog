@@ -1,3 +1,6 @@
+//Import Enviroments Variables
+require('dotenv').config()
+
 // Import Express
 const express = require('express');
 // Initializing express
