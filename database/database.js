@@ -1,5 +1,7 @@
 //Import Enviroments Variables
-require('dotenv').config()
+require('dotenv').config();
+
+const mysql2 = require('mysql2');
 
 // Import express
 const sequelize = require('sequelize');
@@ -17,7 +19,7 @@ const connection = new sequelize(
          rejectUnauthorized: false
       }
    },
-   dialectModule: require('mysql2')
+   dialectModule: mysql2
 });
 
 module.exports = connection;
