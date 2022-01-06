@@ -7,7 +7,7 @@ const User = require('../Models/User');
 // Import bcryptjs
 const bcrypt = require('bcryptjs');
 // Import Authenticate Middleware
-const authenticateMiddleware = require('../../../Middleware/Authenticate');
+const authenticateMiddleware = require('../../../middleware/Authenticate');
 
 // User Routes
 router.get('/admin/users', authenticateMiddleware, (req, res) => {

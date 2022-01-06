@@ -9,7 +9,7 @@ const Article = require('../models/Article');
 // Import slugify
 const slugify = require('slugify');
 // Import Authenticate Middleware
-const authenticateMiddleware = require('../../../Middleware/Authenticate');
+const authenticateMiddleware = require('../../../middleware/Authenticate');
 
 // Articles Routes
 router.get('/admin/articles', authenticateMiddleware, (req, res) => {
