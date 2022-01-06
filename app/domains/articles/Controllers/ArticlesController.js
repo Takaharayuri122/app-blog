@@ -5,7 +5,7 @@ const router = express.Router();
 // Import category model
 const Category = require('../../categories/models/Category');
 // Import article model
-const Article = require('../Models/Article');
+const Article = require('../models/Article');
 // Import slugify
 const slugify = require('slugify');
 // Import Authenticate Middleware

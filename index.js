@@ -18,7 +18,7 @@ const articlesController = require('./app/Domains/articles/Controllers/ArticlesC
 const usersController = require('./app/Domains/Users/Controllers/UsersController');
 
 // Import Models
-const Article = require('./app/Domains/articles/Models/Article');
+const Article = require('./app/domains/articles/models/Article');
 const Category = require('./app/domains/categories/models/Category');
 const User = require('./app/Domains/users/Models/User');
 
