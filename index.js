@@ -207,6 +207,6 @@ app.get('/category/:slug', (req, res) => {
 });
 
 // Building Server
-app.listen(8000, () => {
+app.listen(3000, () => {
    console.log('O servidor está rodando!');
 });
