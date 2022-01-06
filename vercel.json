@@ -3,10 +3,15 @@
   "builds": [
     {
       "src": "./index.js",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": ["./app/**", "./**"]
-      }
+      "use": "@vercel/node"
+    },
+    {
+      "src": "app/**",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "/(.*)",
+      "use": "@vercel/node"
     }
   ],
   "routes": [

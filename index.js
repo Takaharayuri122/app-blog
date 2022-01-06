@@ -19,7 +19,7 @@ const usersController = require('./app/Domains/Users/Controllers/UsersController
 
 // Import Models
 const Article = require('./app/domains/articles/models/Article');
-const Category = require('./app/domains/categories/models/Category');
+const Category = require('./app/domains/categories/models/category');
 const User = require('./app/Domains/users/Models/User');
 
 // Initializing view engine - EJS
