@@ -7,7 +7,7 @@ const Category = require('../models/category');
 // Import slugify
 const slugify = require('slugify');
 // Import Authenticate Middleware
-const authenticateMiddleware = require('../../../middleware/Authenticate');
+const authenticateMiddleware = require('../../../middleware/authenticate');
 
 // Category Routes
 router.get('/admin/categories', authenticateMiddleware, (req, res) => {
