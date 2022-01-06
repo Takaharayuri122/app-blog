@@ -16,7 +16,8 @@ const connection = new sequelize(
       ssl: {
          rejectUnauthorized: false
       }
-   }
+   },
+   dialectModule: require('mysql2')
 });
 
 module.exports = connection;
