@@ -10,16 +10,16 @@ const bodyParser = require('body-parser');
 // Import express session
 const session = require('express-session');
 // Import connection with mysql
-const connection = require('./database/database');
+const connection = require('./database/database')
 
 // Import Controllers
-const categoriesController = require('./CategoriesController');
+const categoriesController = require('./app/domains/categories/controllers/CategoriesController');
 const articlesController = require('./app/Domains/articles/Controllers/ArticlesController');
 const usersController = require('./app/Domains/Users/Controllers/UsersController');
 
 // Import Models
 const Article = require('./app/Domains/articles/Models/Article');
-const Category = require('./app/Domains/categories/Models/Category');
+const Category = require('./app/domains/categories/models/Category');
 const User = require('./app/Domains/users/Models/User');
 
 // Initializing view engine - EJS
