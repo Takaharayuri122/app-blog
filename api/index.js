@@ -10,7 +10,7 @@ const bodyParser = require('body-parser');
 // Import express session
 const session = require('express-session');
 // Import connection with mysql
-const connection = require('../database/database')
+const connection = require('./database/database')
 
 // Import Controllers
 // const categoriesController = require('./app/domains/categories/controllers/CategoriesController');
@@ -45,9 +45,11 @@ connection
    .authenticate()
    .then(() => {
       console.log('Conexão feita com sucesso!');
+      return true;
    })
    .catch((error) => {
       console.error(error);
+      return false;
    })
 
 // Informing the application that I want to use the routes from the Controller file
