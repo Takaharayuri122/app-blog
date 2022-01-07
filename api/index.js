@@ -10,7 +10,7 @@ const bodyParser = require('body-parser');
 // Import express session
 const session = require('express-session');
 // Import connection with mysql
-const connection = require('./database/database')
+const connection = require('../database/database')
 
 // Import Controllers
 // const categoriesController = require('./app/domains/categories/controllers/CategoriesController');
