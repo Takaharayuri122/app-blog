@@ -41,30 +41,36 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Database
+
+
+
+
 connection
    .authenticate()
    .then(() => {
       console.log('Conexão feita com sucesso!');
-      return true;
+      startServer();
    })
    .catch((error) => {
       console.error(error);
       return false;
    })
-
 // Informing the application that I want to use the routes from the Controller file
 // Note that before calling routes I define a prefix (My route access prefix)
 // app.use('/', categoriesController);
 // app.use('/', articlesController);
 // app.use('/', usersController);
 
-app.get('/', (request, response) => {
-   return response.json({ok:true});
-})
+const startServer = () => {
+   app.get('/', (request, response) => {
+      return response.json({ ok: true });
+   })
 
-const port = process.env.PORT || 3000;
+   const port = process.env.PORT || 3000;
 
-// // Building Server
-app.listen(port, () => {
-   console.log('O servidor está rodando!');
-});
+   // // Building Server
+   app.listen(port, () => {
+      console.log('O servidor está rodando!');
+   });
+}
+
