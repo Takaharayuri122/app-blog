@@ -30,14 +30,14 @@ app.use(session({
    // The secret is used to compute a hash against the session ID
    secret: 'RW@RY$QeDdDe',
    // Similar to session expiration, you can also expire the cookie that was sent to the browser.
-   cookie: {maxAge: 28800000}
+   cookie: { maxAge: 28800000 }
 }));
 
 // Initializing static files on public page
 app.use(express.static('public'));
 
 // Initializing bodyParser
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Database
@@ -86,7 +86,7 @@ app.get('/page/:num', (req, res) => {
    const page = req.params.num;
    let offset = 0;
 
-   if(isNaN(page) || page == 1) {
+   if (isNaN(page) || page == 1) {
       offset = 0;
    } else {
       offset = (parseInt(page) - 1) * 4;
@@ -99,7 +99,7 @@ app.get('/page/:num', (req, res) => {
    }).then(articles => {
       let next;
 
-      if(offset + 4 >= articles.count) {
+      if (offset + 4 >= articles.count) {
          next = false;
       } else {
          next = true;
@@ -148,18 +148,18 @@ app.get('/about', (req, res) => {
 // Single Post Route
 app.get('/:slug', (req, res) => {
    const slug = req.params.slug;
-   Article.findOne({ 
+   Article.findOne({
       where: {
          slug: slug
       }
    }).then(article => {
-      if(article !== undefined) {
+      if (article !== undefined) {
          Category.findAll().then(categories => {
             Article.findAll({
                // Sorting articles from newest to oldest
-            order: [['id', 'DESC']],
-            // Returning the last 3 posts
-            limit: 3
+               order: [['id', 'DESC']],
+               // Returning the last 3 posts
+               limit: 3
             }).then(recentArticles => {
                res.render('article', {
                   article: article,
@@ -183,9 +183,9 @@ app.get('/category/:slug', (req, res) => {
       where: {
          slug: slug
       },
-      include: [{model: Article}]
+      include: [{ model: Article }]
    }).then(category => {
-      if(category !== undefined) {
+      if (category !== undefined) {
          Category.findAll().then(categories => {
             Article.findAll({
                // Sorting articles from newest to oldest
@@ -194,8 +194,8 @@ app.get('/category/:slug', (req, res) => {
                limit: 3
             }).then(recentArticles => {
                res.render('category', {
-                  articles: category.articles, 
-                  categories: categories, 
+                  articles: category.articles,
+                  categories: categories,
                   category: category,
                   recentArticles: recentArticles
                });
@@ -211,8 +211,7 @@ app.get('/category/:slug', (req, res) => {
 
 const port = process.env.PORT || 3000;
 
-export default app;
 // // Building Server
-// app.listen(port, () => {
-//    console.log('O servidor está rodando!');
-// });
+app.listen(port, () => {
+   console.log('O servidor está rodando!');
+});

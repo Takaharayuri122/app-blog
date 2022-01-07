@@ -1,2 +1,2 @@
 const server = require('../index');
-module.exports = server.app();
+return true;
