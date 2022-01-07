@@ -14,13 +14,13 @@ const connection = require('./database/database')
 
 // Import Controllers
 const categoriesController = require('./app/domains/categories/controllers/CategoriesController');
-const articlesController = require('./app/Domains/articles/Controllers/ArticlesController');
-const usersController = require('./app/Domains/Users/Controllers/UsersController');
+const articlesController = require('./app/domains/articles/controllers/ArticlesController');
+const usersController = require('./app/domains/users/controllers/UsersController');
 
 // Import Models
 const Article = require('./app/domains/articles/models/Article');
 const Category = require('./app/domains/categories/models/category');
-const User = require('./app/Domains/users/Models/User');
+const User = require('./app/domains/users/models/User');
 
 // Initializing view engine - EJS
 app.set('view engine', 'ejs');
