@@ -1,15 +1,13 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "./index.js",
-      "use": "@vercel/node"
-    }
+  "public": true,
+  "name": "test-universal",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/api" }
   ],
-  "routes": [
-    {
-      "src": "app/(.*)",
-      "dest": "/"
+  "functions": {
+    "api/index.js": {
+      "includeFiles": "app/**"
     }
-  ]
+  }
 }
