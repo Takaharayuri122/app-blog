@@ -13,7 +13,7 @@ const session = require('express-session');
 const connection = require('./database/database')
 
 // Import Controllers
-// const categoriesController = require('./app/domains/categories/controllers/CategoriesController');
+const categoriesController = require('./app/domains/categories/controllers/CategoriesController');
 // const articlesController = require('./app/Domains/articles/Controllers/ArticlesController');
 // const usersController = require('./app/Domains/Users/Controllers/UsersController');
 
@@ -57,7 +57,7 @@ connection
    })
 // Informing the application that I want to use the routes from the Controller file
 // Note that before calling routes I define a prefix (My route access prefix)
-// app.use('/', categoriesController);
+app.use('/', categoriesController);
 // app.use('/', articlesController);
 // app.use('/', usersController);
 
