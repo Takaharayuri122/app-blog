@@ -14,13 +14,13 @@ const connection = require('./database/database')
 
 // Import Controllers
 const categoriesController = require('./app/domains/categories/controllers/CategoriesController');
-// const articlesController = require('./app/Domains/articles/Controllers/ArticlesController');
-// const usersController = require('./app/Domains/Users/Controllers/UsersController');
+const articlesController = require('./app/Domains/articles/Controllers/ArticlesController');
+const usersController = require('./app/Domains/Users/Controllers/UsersController');
 
 // Import Models
-// const Article = require('./app/domains/articles/models/Article');
-// const Category = require('./app/domains/categories/models/category');
-// const User = require('./app/Domains/users/Models/User');
+const Article = require('./app/domains/articles/models/Article');
+const Category = require('./app/domains/categories/models/category');
+const User = require('./app/Domains/users/Models/User');
 
 // Initializing view engine - EJS
 app.set('view engine', 'ejs');
@@ -58,8 +58,8 @@ connection
 // Informing the application that I want to use the routes from the Controller file
 // Note that before calling routes I define a prefix (My route access prefix)
 app.use('/', categoriesController);
-// app.use('/', articlesController);
-// app.use('/', usersController);
+app.use('/', articlesController);
+app.use('/', usersController);
 
 const startServer = () => {
    app.get('/', (request, response) => {
