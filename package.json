@@ -4,9 +4,9 @@
   "description": "App Blog utilizando NodeJS + Express",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "build": "node index.js",
-    "vercel-build": "node index.js"
+    "start": "node api/",
+    "build": "node api/",
+    "vercel-build": "node api/"
   },
   "repository": {
     "type": "git",
